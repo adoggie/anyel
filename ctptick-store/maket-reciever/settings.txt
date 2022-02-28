@@ -1,0 +1,65 @@
+
+id=eltrader
+
+#调试输出
+debug.log.udp.enable = true
+debug.log.udp.host= 192.168.0.100
+debug.log.udp.port= 9906
+
+#是否定时检查呼叫的存活包(开发模式可关闭)
+keepalive_check.enable = false
+
+
+ctp.market.enable = 1
+ctp.market.join = 0
+ctp.market.tick.json =0
+ctp.market.tick.raw = 1
+ctp.market.tick.text = 1
+
+ctp.trade.join = 1
+ctp.trade.enable = 1
+ctp.trade.query_interval = 2
+
+ctp.trade.query_trade = 0
+ctp.trade.query_account = 1
+ctp.trade.query_order = 1
+ctp.trade.query_position = 1
+
+ctp.user_id=
+ctp.password=
+ctp.broker_id=
+ctp.con_path= ./cons
+ctp.md_addr= tcp://101.230.217.33:41215
+ctp.td_addr= tcp://101.230.217.33:41207
+ctp.require_auth= true
+ctp.product_info= 
+ctp.auth_code = 
+ctp.sub_instruments =RM201
+
+
+position_receiver.enable = 0
+position_receiver.pub_addr = tcp://127.0.0.1:9011
+
+registry_client.enable = 0
+registry_client.pull_url=http://127.0.0.1:9988/api/elxtrader/registry/pull
+
+pub_service.enable = 1
+pub_service.addr = tcp://0.0.0.0:9012
+
+redis.enable = 1
+redis.host=192.168.30.21
+redis.port=45221
+redis.db=0
+
+#
+http_service.enable = 1
+http_service.port=7001
+http_service.document_root=/tmp/dtu/http
+
+# k线计算
+mkline.enable = 1
+mkline.periods=10s,15s,20s,30s,60s
+mkline.pub_addr=inproc://
+mkline.topic=mkline/$period/$symbol
+mkline.mmap = 1
+mkline.mmap.file = /tmp/mkline.dat

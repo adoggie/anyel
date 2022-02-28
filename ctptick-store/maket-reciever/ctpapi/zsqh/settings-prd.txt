@@ -1,0 +1,29 @@
+
+ctp.user_id=25500011
+ctp.password=
+ctp.broker_id=6010
+ctp.con_path= ./cons
+ctp.md_addr= tcp://180.166.1.17:41313
+ctp.td_addr= tcp://180.169.75.194:41305
+
+ctp.product_info= client_bqsquant_1.0
+ctp.auth_code = T4EI5ISZLUNUGETY
+ctp.sub_instruments = m1909,AP910
+
+redis.host= 127.0.0.1
+redis.port= 6380
+redis.user=
+redis.password=
+redis.db=0
+
+
+mongodb.host=
+mongodb.port=
+mongodb.user=
+mongodb.password=
+
+ctp.pub_depthmarket = ctp.tick.pub_
+ctp.list_depthmarket = ctp.tick.list_all
+ctp.last_depthmarket = ctp.tick.dm_
+
+log.debug = 1
