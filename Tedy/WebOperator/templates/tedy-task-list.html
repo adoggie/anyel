@@ -1,0 +1,28 @@
+<div title="计算参数任务" style="padding:10px">
+    <div class="easyui-panel" style="width:100%;padding:5px">
+
+        <a href="#" class="easyui-linkbutton c5" onclick="$('#trade_pos_status').datagrid('reload')">reload</a>
+
+    </div>
+
+
+    <table id="dg_tedy_tasklist" class="easyui-datagrid"
+        data-options="url:'/api/tedy/task_list',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true,
+            rowStyler: function(index,row){
+                if (row.timeout >80 ){
+                    return 'background-color:red;color:white;font-weight:bold;';
+                }
+            }
+            "
+    >
+        <thead>
+            <tr>
+                <th data-options="field:'task'" width="120">task</th>
+                <th data-options="field:'start'" width="120">start</th>
+                <th data-options="field:'end'" width="120">end</th>
+                <th data-options="field:'result'" width="280">result</th>
+
+            </tr>
+        </thead>
+    </table>
+</div>

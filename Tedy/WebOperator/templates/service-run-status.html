@@ -1,0 +1,27 @@
+<div title="服务运行状态" style="padding:10px">
+    <a href="#" class="easyui-linkbutton c5" onclick="$('#service_status').datagrid('reload')">reload</a>
+
+    <table id="service_status" class="easyui-datagrid"
+        data-options="url:'/api/service_status',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true,
+            rowStyler: function(index,row){
+                if (row.timeout >80 ){
+                    return 'background-color:red;color:white;font-weight:bold;';
+                }
+            }
+            "
+    >
+        <thead>
+            <tr>
+                <th data-options="field:'service_type'" width="80">服务类型</th>
+                <th data-options="field:'service_id'" width="80">服务编号</th>
+                <th data-options="field:'now',align:'center'" width="80">服务当前时间</th>
+                <th data-options="field:'pid',align:'center'" width="80">服务进程PID</th>
+                <th data-options="field:'start'" width="80">启动时间</th>
+                <th data-options="field:'uptime',align:'center'" width="80">更新时间</th>
+                <th data-options="field:'timeout',align:'center'" width="40">超时</th>
+                <th data-options="field:'ip',align:'center'" width="40">IP</th>
+                <th data-options="field:'tag',align:'center'" width="40">TAG</th>
+            </tr>
+        </thead>
+    </table>
+</div>

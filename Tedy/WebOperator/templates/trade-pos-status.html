@@ -1,0 +1,50 @@
+<div title="报单仓位信息" style="padding:10px">
+    <div class="easyui-panel" style="width:100%;padding:5px">
+
+        <a href="#" class="easyui-linkbutton c5" onclick="$('#trade_pos_status').datagrid('reload')">reload</a>
+
+
+        <div style="margin-bottom:5px">
+            <select id="sel_trader_list" class="easyui-combobox" name="state" label="报单服务:"
+                    labelPosition="left" style="width:300px;" valueField="trade_id" textField="name"
+                    url="/api/trade_service/list"  method="get",
+                    data-options='onSelect:function(item){
+                        //alert( JSON.stringify(item) );
+                        $("#trade_pos_status").datagrid("load",{
+                            trader_id: item.service_id
+                        });
+                    }'
+
+            >
+
+            </select>
+        </div>
+
+    </div>
+
+
+    <table id="trade_pos_status" class="easyui-datagrid"
+        data-options="url:'/api/trade_pos_status',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true,
+            rowStyler: function(index,row){
+                if (row.timeout >80 ){
+                    return 'background-color:red;color:white;font-weight:bold;';
+                }
+            }
+            "
+    >
+        <thead>
+            <tr>
+                <th data-options="field:'service_type'" width="80">服务类型</th>
+                <th data-options="field:'service_id'" width="80">服务编号</th>
+                <th data-options="field:'exchange'" width="80">交易所</th>
+                <th data-options="field:'tt'" width="80">交易类型</th>
+                <th data-options="field:'account',align:'center'" width="80">账 号</th>
+                <th data-options="field:'symbol',align:'center'" width="80">交易对</th>
+                <th data-options="field:'db_pos'" width="80">目标仓位(db_pos)</th>
+                <th data-options="field:'real_pending'" width="80">准备仓位(real_pending)</th>
+                <th data-options="field:'real_pos'" width="80">真实仓位(real_pos)</th>
+                <th data-options="field:'timestamp',align:'center'" width="80">时 间</th>
+            </tr>
+        </thead>
+    </table>
+</div>

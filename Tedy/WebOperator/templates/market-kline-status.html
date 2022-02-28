@@ -1,0 +1,27 @@
+<div title="报单仓位信息" style="width:100%;height:100%">
+    <div class="easyui-panel" style="width:100%;padding:5px">
+        <p style="font-size:14px">显示行情交易对最新更新状态</p>
+<!--        <a href="#" class="easyui-linkbutton c5" onclick="$('#trade_pos_status').datagrid('reload')">reload</a>-->
+    </div>
+    <table id="dg_market_kline_status" class="easyui-datagrid"
+        data-options="url:'/api/market/kline_uptime',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true,
+            rowStyler: function(index,row){
+                if (row.timeout >80 ){
+                    return 'background-color:red;color:white;font-weight:bold;';
+                }
+            }
+            "
+style="width:100%;height:100%"
+    >
+        <thead>
+            <tr>
+                <th data-options="field:'id'" width="20">ID</th>
+                <th data-options="field:'exchange'" width="40">交易所</th>
+                <th data-options="field:'tt'" width="40">交易类型</th>
+                <th data-options="field:'period',align:'center'" width="20">周 期</th>
+                <th data-options="field:'symbol',align:'center'" width="80">交易对</th>
+                <th data-options="field:'timestamp',align:'center'" width="80">时 间</th>
+            </tr>
+        </thead>
+    </table>
+</div>

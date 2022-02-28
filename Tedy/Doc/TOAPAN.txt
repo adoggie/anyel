@@ -1,0 +1,16 @@
+
+
+172.16.30.30
+tedy/tedy123
+
+~/TedyAdmin/project.py
+   project.py deploy tickfeature 修改代码之后同步
+   project.py run_ex tickfeature 启动
+   project.py stop  tickfeature 停止
+
+项目数据目录 ：  /mnt/data7t
+
+worker数据回写目录:  /data
+
+配置数据库: 172.16.30.3:27018
+  Task / TaskEx

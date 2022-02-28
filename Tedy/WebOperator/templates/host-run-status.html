@@ -1,0 +1,40 @@
+<div title="服务器状态监控" style="padding:10px">
+    <a href="#" class="easyui-linkbutton c5" onclick="$('#host_status').datagrid('reload')">reload</a>
+
+    <table id="host_status" class="easyui-datagrid"
+        data-options="url:'/api/host_status',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true,
+            rowStyler: function(index,row){
+                if (row.timeout >80 ){
+                    return 'background-color:red;color:white;font-weight:bold;';
+                }
+            }
+            "
+    >
+        <thead>
+            <tr>
+                <th data-options="field:'ip'" width="60">IP</th>
+                <th data-options="field:'datetime'" width="80">主机时间</th>
+                <th data-options="field:'cpu',align:'center'" width="20">CPU</th>
+<!--                <th data-options="field:'loads',align:'center'" width="40">LOAD</th>-->
+                <th data-options="field:'mem'" width="80">MEM</th>
+                <th data-options="field:'swap',align:'center'" width="80">SWAP</th>
+                <th data-options="field:'root',align:'center'" width="80">ROOT</th>
+                <th data-options="field:'img_mem',align:'center',formatter:formatImage" >MEM</th>
+                <th data-options="field:'img_uptime',align:'center',formatter:formatImage" >LOAD</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<script >
+function formatImage(value,row,index){
+　　if(value){
+　　　　return "<img src='" + value + "' width=180px height=60px>";
+//　　　　return "<img src='" + value + "' ";
+
+　　}else{
+　　　　return null;
+　　}
+}
+
+</script>

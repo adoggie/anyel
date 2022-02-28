@@ -1,0 +1,30 @@
+<div title="计算工作者" style="padding:10px">
+    <div class="easyui-panel" style="width:100%;padding:5px">
+        <a href="#" class="easyui-linkbutton c5" onclick="$('#trade_pos_status').datagrid('reload')">reload</a>
+    </div>
+
+
+    <table id="dg_tedy_workerlist" class="easyui-datagrid"
+        data-options="url:'/api/tedy/worker_list',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true,
+            rowStyler: function(index,row){
+                if (row.timeout >80 ){
+                    return 'background-color:red;color:white;font-weight:bold;';
+                }
+            }
+            "
+    >
+        <thead>
+            <tr>
+                <th data-options="field:'id'" width="80">id</th>
+                <th data-options="field:'node'" width="80">node</th>
+                <th data-options="field:'worker'" width="80">worker_idx</th>
+                <th data-options="field:'task_list'" width="80">task_list</th>
+                <th data-options="field:'start',align:'center'" width="80">start</th>
+                <th data-options="field:'end',align:'center'" width="80">end</th>
+                <th data-options="field:'result'" width="80">result</th>
+                <th data-options="field:'error'" width="80">error</th>
+
+            </tr>
+        </thead>
+    </table>
+</div>

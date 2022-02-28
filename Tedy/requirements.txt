@@ -1,0 +1,9 @@
+tinyrpc
+pymongo
+python-dateutil
+fire
+toml
+gevent
+pyarrow
+numpy_ext
+TA-Lib

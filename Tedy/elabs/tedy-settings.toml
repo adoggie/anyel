@@ -1,0 +1,21 @@
+ip = "192.168.30.21"
+service_id = "cs5"
+python = "/home/tedy/anaconda3/bin/python"
+node_dir = "/home/tedy/node"
+repo_dir = "/home/tedy/repo"
+data_dir = "/data"
+rpc_port = 5000
+ssh_user = "tedy"
+ssh_port = 22
+ssh_passwd = "tedy123"
+mx_addr = "tcp://localhost:17901"
+message_topic = []
+system_broker_addr_s = "tcp://127.0.0.1:14552"
+system_broker_addr_p = "tcp://127.0.0.1:14551"
+service_type = "node"
+workers = 1
+name = "cs5"
+
+[mongodb]
+host = "127.0.0.1"
+port = 27017

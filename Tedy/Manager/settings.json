@@ -1,0 +1,25 @@
+{
+  "logger.level":"DEBUG",
+  "logger.path": "./",
+  "logger.filename": "manager.log",
+  "logger.stdout": 1,
+
+
+  "mongodb": {"host":"127.0.0.1", "port": 27018},
+  "message_topic": [
+    "2.0,manager:manager,host_run_status"
+  ],
+  "service_id": "manager",
+  "service_type": "manager",
+  "secret_key":"1234567890abcdef1234567890abcdef",
+
+  "system_broker_addr_p": "tcp://172.16.30.3:31010",
+  "system_broker_addr_s": "tcp://172.16.30.3:31011",
+  "market_public_broker_addr": "tcp://172.16.10.253:15552",
+
+  "registry_client.enable": 0,
+  "registry_client.logger.level":"INFO",
+  "keep_alive_interval" : 20,
+  "keep_alive_mx_broadcast_interval": 5
+
+}

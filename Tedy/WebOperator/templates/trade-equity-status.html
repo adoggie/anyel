@@ -1,0 +1,26 @@
+<div title="实盘权益信息" style="padding:10px">
+    <a href="#" class="easyui-linkbutton c5" onclick="$('#trade_equity_status').datagrid('reload')">reload</a>
+
+    <table id="trade_equity_status" class="easyui-datagrid"
+        data-options="url:'/api/trade_equity_status',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true,
+            rowStyler: function(index,row){
+                if (row.timeout >80 ){
+                    return 'background-color:red;color:white;font-weight:bold;';
+                }
+            }
+            "
+    >
+        <thead>
+            <tr>
+                <th data-options="field:'service_type'" width="80">服务类型</th>
+                <th data-options="field:'service_id'" width="80">服务编号</th>
+                <th data-options="field:'timestamp',align:'center'" width="80">时间</th>
+                <th data-options="field:'account',align:'center'" width="80">账户</th>
+                <th data-options="field:'exchange'" width="80">交易所</th>
+                <th data-options="field:'collateral',align:'center'" width="80">帐户实际资产</th>
+                <th data-options="field:'free_collateral',align:'center'" width="40">空闲可用资产</th>
+                <th data-options="field:'position_value',align:'center'" width="40">开仓市值</th>
+            </tr>
+        </thead>
+    </table>
+</div>
